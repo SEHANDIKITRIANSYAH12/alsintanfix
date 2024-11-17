@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->date('maintenance_date');
             $table->decimal('cost', 15, 2)->nullable();
             $table->integer('duration')->nullable(); // Durasi dalam hari
+            $table->enum('status', ['repaired', 'fixed'])->default('repaired');
             $table->timestamps();
         });
     }

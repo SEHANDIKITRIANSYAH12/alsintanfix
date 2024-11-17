@@ -25,13 +25,18 @@
                 <td>Rp {{ number_format($maintenance->cost, 0, ',', '.') }}</td>
                 <td>{{ $maintenance->duration }} hari</td>
                 <td>
-                    @if ($maintenance->status == 'selesai')
+                    @if ($maintenance->status == 'fixed')
                         <span class="badge bg-success">Selesai</span>
                     @else
                         <span class="badge bg-warning">Dalam Pemeliharaan</span>
                     @endif
                 </td>
                 <td>
+                    <form action="{{ route('maintenances.fixed', $maintenance->id) }}" method="POST" style="display:inline-block;">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-success btn-sm">Selesai</button>
+                    </form>
                     <a href="{{ route('maintenances.edit', $maintenance->id) }}" class="btn btn-warning btn-sm">Edit</a>
                     <form action="{{ route('maintenances.destroy', $maintenance->id) }}" method="POST" style="display:inline-block;">
                         @csrf

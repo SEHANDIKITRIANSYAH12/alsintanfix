@@ -15,6 +15,7 @@ class Maintenance extends Model
         'maintenance_date',
         'cost',
         'duration',
+        'status'
     ];
 
     public function equipment()

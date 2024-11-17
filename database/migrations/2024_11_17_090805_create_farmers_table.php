@@ -1,20 +1,19 @@
 <?php
 
-// database/migrations/xxxx_xx_xx_create_farmers_table.php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFarmersTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
         Schema::create('farmers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');  // Nama petani
-            $table->string('address');  // Alamat petani
-            $table->string('phone_number');  // Nomor telepon petani
+            $table->string('name');
+            $table->text('address');
+            $table->string('phone_number');
+            $table->decimal('land_area', 10, 2); // in hectares
             $table->timestamps();
         });
     }
@@ -23,4 +22,4 @@ class CreateFarmersTable extends Migration
     {
         Schema::dropIfExists('farmers');
     }
-}
+};

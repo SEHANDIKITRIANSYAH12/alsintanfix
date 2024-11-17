@@ -1,7 +1,5 @@
 <?php
 
-// app/Models/Farmer.php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,6 +13,7 @@ class Farmer extends Model
         'name',
         'address',
         'phone_number',
+        'land_area',
     ];
 
     // Relasi ke model Usage

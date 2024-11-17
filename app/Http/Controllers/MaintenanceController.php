@@ -30,6 +30,8 @@ class MaintenanceController extends Controller
             'duration' => 'nullable|integer',
         ]);
 
+        $request = $request->merge(['status' => 'repaired']);
+
         Maintenance::create($request->all());
 
         return redirect()->route('maintenances.index')->with('success', 'Jadwal pemeliharaan berhasil ditambahkan.');
@@ -59,6 +61,13 @@ class MaintenanceController extends Controller
         $maintenance->update($request->all());
 
         return redirect()->route('maintenances.index')->with('success', 'Data pemeliharaan berhasil diperbarui.');
+    }
+
+    public function fixed(Maintenance $maintenance)
+    {
+        $maintenance->update(['status' => 'fixed']);
+
+        return redirect()->route('maintenances.index')->with('success', 'Equipment Berhasil Di Perbaiki.');
     }
 
     public function destroy(Maintenance $maintenance)
