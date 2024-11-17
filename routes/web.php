@@ -45,6 +45,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::put('/maintenances/{maintenance}/fixed', [MaintenanceController::class, 'fixed'])->name('maintenances.fixed');
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('/reports/export', [ReportController::class, 'export'])->name('reports.export');
+    Route::resource('users', UserController::class);
+    Route::resource('roles', RoleController::class);
 
 });
 
