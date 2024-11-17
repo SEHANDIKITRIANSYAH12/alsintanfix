@@ -71,6 +71,42 @@
             </a>
         </li>
 
+        < <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            {{ __('Menu') }}
+        </div>
+
+        <!-- Nav Item - Management Alsintan -->
+            <li class="nav-item {{ Nav::isRoute('equipment.index') }}">
+                <a class="nav-link" href="{{ route('equipment.index') }}">
+                    <i class="fas fa-fw fa-cogs"></i>
+                    <span>{{ __('Management Alsintan') }}</span>
+                </a>
+            </li>
+
+                    <!-- Nav Item - Maintenance Management -->
+        <li class="nav-item {{ Nav::isRoute('maintenances.index') }}">
+            <a class="nav-link" href="{{ route('maintenances.index') }}">
+                <i class="fas fa-fw fa-tools"></i>
+                <span>{{ __('Pemeliharaan Alat') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Usage Management -->
+<li class="nav-item {{ Nav::isRoute('usages.index') }}">
+    <a class="nav-link" href="{{ route('usages.index') }}">
+        <i class="fas fa-fw fa-cogs"></i>
+        <span>{{ __('Penggunaan Alsintan') }}</span>
+    </a>
+</li>
+
+
+
+           
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
