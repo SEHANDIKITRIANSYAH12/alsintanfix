@@ -34,10 +34,11 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-tractor"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">UPJA Manage</div>
             </a>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -112,16 +113,6 @@
                         <span>{{ __('Pemeliharaan Alat') }}</span>
                     </a>
                 </li>
-
-                <!-- Nav Item - Usage Management -->
-                <li class="nav-item {{ Nav::isRoute('usages.index') }}">
-                    <a class="nav-link" href="{{ route('usages.index') }}">
-                        <i class="fas fa-fw fa-cogs"></i>
-                        <span>{{ __('Penggunaan Alsintan') }}</span>
-                    </a>
-                </li>
-
-
 
 
 

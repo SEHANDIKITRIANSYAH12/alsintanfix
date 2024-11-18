@@ -34,7 +34,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::resource('usages', UsageController::class);
     Route::resource('equipment', EquipmentController::class);
 });
 
@@ -47,6 +46,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/reports/export', [ReportController::class, 'export'])->name('reports.export');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
+    Route::resource('usages', UsageController::class)->only(['create', 'store', 'index']);
 
 });
 
