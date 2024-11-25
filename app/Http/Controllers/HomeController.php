@@ -2,35 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Equipment;
+use App\Models\Maintenance;
+use App\Models\Repair;
+use App\Models\Material;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        $users = User::count();
+        // Ambil data dari database
+        $equipments = Equipment::all(); // Atau gunakan pagination dengan paginate(10)
+        $maintenances = Maintenance::latest()->take(5)->get(); // Data terbaru
+        $repairs = Repair::count(); // Total repairs
 
-        $widget = [
-            'users' => $users,
-            //...
-        ];
 
-        return view('home', compact('widget'));
+        // Kirim data ke view
+        return view('home', compact('equipments', 'maintenances', 'repairs', ));
     }
 }

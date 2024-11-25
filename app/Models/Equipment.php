@@ -20,7 +20,6 @@ class Equipment extends Model
         'hp', 
         'kondisi_baik', 
         'kondisi_rusak', 
-        'jumlah'
     ];
 
     // Menonaktifkan timestamp jika tidak ada kolom created_at dan updated_at

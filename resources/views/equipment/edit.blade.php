@@ -37,11 +37,6 @@
             <input type="number" name="kondisi_rusak" id="kondisi_rusak" class="form-control" value="{{ old('kondisi_rusak', $equipment->kondisi_rusak) }}" required>
         </div>
         
-        <div class="form-group">
-            <label for="jumlah">Jumlah</label>
-            <input type="number" name="jumlah" id="jumlah" class="form-control" value="{{ old('jumlah', $equipment->jumlah) }}" required>
-        </div>
-        
         <button type="submit" class="btn btn-warning mt-3">Update</button>
         <a href="{{ route('equipment.index') }}" class="btn btn-secondary mt-3">Kembali</a>
     </form>

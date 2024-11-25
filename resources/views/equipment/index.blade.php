@@ -2,7 +2,7 @@
 
 @section('main-content')
 <div class="container">
-    <h1>Ringkasan Data Alsintan</h1>
+    <h1>Data Alsintan</h1>
     <a href="{{ route('equipment.create') }}" class="btn btn-primary mb-3">Tambah Data Alsintan</a>
     <table class="table table-bordered">
         <thead>
@@ -13,7 +13,6 @@
                 <th>HP</th>
                 <th>Kondisi Baik</th>
                 <th>Kondisi Rusak</th>
-                <th>Jumlah</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -26,7 +25,6 @@
                 <td>{{ $item->hp }}</td>
                 <td>{{ $item->kondisi_baik }}</td>
                 <td>{{ $item->kondisi_rusak }}</td>
-                <td>{{ $item->jumlah }}</td>
                 <td>
                     <a href="{{ route('equipment.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('equipment.destroy', $item->id) }}" method="POST" style="display:inline-block;">

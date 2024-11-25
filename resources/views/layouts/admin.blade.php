@@ -102,7 +102,7 @@
                 <li class="nav-item {{ Nav::isRoute('equipment.index') }}">
                     <a class="nav-link" href="{{ route('equipment.index') }}">
                         <i class="fas fa-fw fa-cogs"></i>
-                        <span>{{ __('Management Alsintan') }}</span>
+                        <span>{{ __('Data Alsintan') }}</span>
                     </a>
                 </li>
 
@@ -113,6 +113,27 @@
                         <span>{{ __('Pemeliharaan Alat') }}</span>
                     </a>
                 </li>
+
+                    <!-- Nav Item - repairs -->
+                    <li class="nav-item {{ Nav::isRoute('repairs.index') }}">
+                        <a class="nav-link" href="{{ route('repairs.index') }}">
+                            <i class="fas fa-fw fa-cogs"></i>
+                            <span>{{ __('Perbaikan Alsintan') }}</span>
+                        </a>
+                    </li>
+
+                     <!-- Nav Item - materials -->
+                     <li class="nav-item {{ Nav::isRoute('materials.index') }}">
+                        <a class="nav-link" href="{{ route('materials.index') }}">
+                            <i class="fas fa-fw fa-cogs"></i>
+                            <span>{{ __('Data alat & Bahan') }}</span>
+                        </a>
+                    </li>
+
+
+
+
+
 
 
 

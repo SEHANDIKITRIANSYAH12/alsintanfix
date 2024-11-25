@@ -29,10 +29,7 @@
             <label for="kondisi_rusak">Kondisi Rusak</label>
             <input type="number" name="kondisi_rusak" id="kondisi_rusak" class="form-control" required>
         </div>
-        <div class="form-group">
-            <label for="jumlah">Jumlah</label>
-            <input type="number" name="jumlah" id="jumlah" class="form-control" required>
-        </div>
+
         <button type="submit" class="btn btn-success mt-3">Simpan</button>
         <a href="{{ route('equipment.index') }}" class="btn btn-secondary mt-3">Kembali</a>
     </form>

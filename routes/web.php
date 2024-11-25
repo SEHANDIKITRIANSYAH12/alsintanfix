@@ -10,6 +10,14 @@ use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\UsageController;
 use App\Http\Controllers\CostController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\RepairController;
+use App\Http\Controllers\MaterialController;
+
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::resource('equipment', EquipmentController::class);
+    Route::resource('repairs', RepairController::class);
+    Route::resource('materials', MaterialController::class);
 });
 
 // Admin routes
@@ -46,13 +56,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/reports/export', [ReportController::class, 'export'])->name('reports.export');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
-    Route::resource('usages', UsageController::class)->only(['create', 'store', 'index']);
-
+    // Usage for Admin: Accessing all functions related to Usage
+    Route::resource('usages', UsageController::class);
+    Route::resource('repairs', RepairController::class);
+    Route::resource('materials', MaterialController::class);
 });
 
 // Operator routes
 Route::middleware(['auth', 'role:operator'])->group(function () {
-    Route::resource('usages', UsageController::class)->only(['create', 'store', 'index']);
+    // Operator: Can view, create, and confirm usage
+    Route::resource('usages', UsageController::class)->only(['index', 'create', 'store']);
     Route::get('/usages/{usage}/confirm', [UsageController::class, 'confirm'])->name('usages.confirm');
     Route::put('/usages/{usage}', [UsageController::class, 'update'])->name('usages.update');
     Route::resource('costs', CostController::class)->only(['create', 'store', 'index']);
@@ -60,7 +73,6 @@ Route::middleware(['auth', 'role:operator'])->group(function () {
 
 // Petani (Farmer) routes
 Route::middleware(['auth', 'role:petani'])->group(function () {
-    Route::get('/usages/create', [UsageController::class, 'create'])->name('usages.create');
-    Route::post('/usages', [UsageController::class, 'store'])->name('usages.store');
-    Route::get('/usages', [UsageController::class, 'index'])->name('usages.index');
+    // Petani: Only need to create and store usages
+    Route::resource('usages', UsageController::class)->only(['create', 'store', 'index']);
 });

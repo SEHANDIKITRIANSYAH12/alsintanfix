@@ -27,7 +27,7 @@ class EquipmentController extends Controller
             'hp' => 'nullable|numeric',
             'kondisi_baik' => 'required|integer',
             'kondisi_rusak' => 'required|integer',
-            'jumlah' => 'required|integer',
+            
         ]);
 
         Equipment::create($request->all());
@@ -49,7 +49,6 @@ class EquipmentController extends Controller
             'hp' => 'nullable|numeric',
             'kondisi_baik' => 'required|integer',
             'kondisi_rusak' => 'required|integer',
-            'jumlah' => 'required|integer',
         ]);
 
         $equipment->update($request->all());

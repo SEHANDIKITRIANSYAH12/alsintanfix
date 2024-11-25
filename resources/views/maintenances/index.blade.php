@@ -7,7 +7,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Nama Alat (Alsintan)</th>
+                <th>Nama Alsintan</th>
                 <th>Tanggal Pemeliharaan</th>
                 <th>Deskripsi Kerusakan</th>
                 <th>Biaya Perbaikan</th>
